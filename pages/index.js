@@ -52,36 +52,36 @@ export default function Home() {
         <h1 className='text-success'>UPI DYNAMIC QR</h1>
       </div>
       <div className=' pt-3'>
-      <form onSubmit={submit}>
-        <div className="mb-3">
-          <label className="form-label">VPA</label>
-          <input type="text" name='vpa' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Name</label>
-            <input type="text" name='name' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Amount</label>
-            <input type="number" name='amount' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Remarks</label>
+        <form onSubmit={submit}>
+          <div className="mb-3">
+            <label className="form-label">VPA</label>
+            <input type="text" name='vpa' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input type="text" name='name' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Amount</label>
+            <input type="number" min="1" max="100000" name='amount' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Remarks</label>
             <input type="text" name='remarks' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
-        </div>
+          </div>
           <div className="text-center">
             <button type="submit" className="btn btn-primary mb-3">Submit</button>
-        </div>
-      </form>
+          </div>
+        </form>
 
-      <div className='text-center'>
+        <div className='text-center'>
           {/* <img src={img}></img> */}
           {spinner ? <div className="spinner-grow text-success" role="status"></div> : ''}
           {/* {img != '' ? <div><h3 className="text-danger">Scan To Pay</h3><Image src={ img } alt='sdfs' width='200' height='200' /><br /><Image src='/upi-logo.png' alt='sdfs' width='80' height='40' /></div> : ''} */}
-          {img != '' ? <div><h3 className="text-danger">Scan To Pay</h3><img src={ img } alt='sdfs' width='200' height='200' /></div> : ''}
-        <div>
-        {error != '' ? <h1 className="text-danger">{error}</h1> : ''}
-        </div>
+          {img != '' ? <div><h3 className="text-danger">Scan To Pay</h3><img src={img} alt='sdfs' width='200' height='200' /></div> : ''}
+          <div>
+            {error != '' ? <h1 className="text-danger">{error}</h1> : ''}
+          </div>
         </div>
       </div>
     </div>
