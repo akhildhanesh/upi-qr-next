@@ -45,32 +45,32 @@ export default function Home() {
     setError('')
   }
   return (
-    <div className='container pt-3'>
+    <div className='container pt-3 text-white'>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
       </link>
       <div className='text-center'>
-        <h1 className='text-success'>UPI DYNAMIC QR</h1>
+        <h1 className='text-success' style={{ fontFamily: 'Times New Roman' }}>UPI DYNAMIC QR GENERATOR</h1>
       </div>
-      <div className=' pt-3'>
+      <div className=' pt-2'>
         <form onSubmit={submit}>
-          <div className="mb-3">
-            <label className="form-label">VPA</label>
+          <div className="mb-2">
+            <label className="form-label" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>VPA</label>
             <input type="text" name='vpa' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
           </div>
           <div className="mb-3">
-            <label className="form-label">Name</label>
+            <label className="form-label" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Name</label>
             <input type="text" name='name' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
           </div>
           <div className="mb-3">
-            <label className="form-label">Amount</label>
+            <label className="form-label" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Amount</label>
             <input type="number" min="1" max="100000" name='amount' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing} required></input>
           </div>
           <div className="mb-3">
-            <label className="form-label">Remarks</label>
+            <label className="form-label" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Remarks</label>
             <input type="text" name='remarks' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
           </div>
           <div className="text-center">
-            <button type="submit" className="btn btn-primary mb-3">Submit</button>
+            <button type="submit" className="btn btn-warning mb-3 btn-lg" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Submit</button>
           </div>
         </form>
 
