@@ -79,7 +79,7 @@ export default function Home() {
           {/* <img src={img}></img> */}
           {spinner ? <div className="spinner-grow text-white" role="status"></div> : ''}
           {/* {img != '' ? <div><h3 className="text-danger">Scan To Pay</h3><Image src={ img } alt='sdfs' width='200' height='200' /><br /><Image src='/upi-logo.png' alt='sdfs' width='80' height='40' /></div> : ''} */}
-          {img != '' ? <div><h3 className="text-white" style={{ fontFamily: 'Cursive' }}>Scan To Pay</h3><img src={img} className="img-corner" alt='sdfs' width='200' height='200' /></div> : ''}
+          {img != '' ? <div><h3 className="text-white" style={{ fontFamily: 'Cursive' }}>Scan To Pay</h3><a href={ img } ><img src={img} className="img-corner" alt='sdfs' width='200' height='200' /></a></div> : ''}
           <div>
             {error != '' ? <h1 className="text-danger">{error}</h1> : ''}
           </div>
