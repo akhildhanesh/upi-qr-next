@@ -71,7 +71,7 @@ export default function Home() {
             <input type="text" name='remarks' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onKeyDown={typing}></input>
           </div>
           <div className="text-center">
-            <button type="submit" className="btn btn-warning mb-3 btn-lg" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Submit</button>
+            {spinner ? <button type="submit" className="btn btn-success mb-3 btn-lg" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Generating...</button> : <button type="submit" className="btn btn-warning mb-3 btn-lg" style={{ fontFamily: 'Cursive', fontSize: '15px', fontWeight: 'bold' }}>Submit</button>}
           </div>
         </form>
 
