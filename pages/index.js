@@ -46,10 +46,11 @@ export default function Home() {
   }
   return (
     <div className='container pt-3 text-white'>
+      <meta name="theme-color" content="#615a9b" />
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
       </link>
       <div className='text-center'>
-        <h1 className='text-success' style={{ fontFamily: 'Times New Roman' }}>UPI DYNAMIC QR GENERATOR</h1>
+        <h1 className='text-white' style={{ fontFamily: 'Times New Roman' }}>UPI DYNAMIC QR GENERATOR</h1>
       </div>
       <div className=' pt-2'>
         <form onSubmit={submit}>
