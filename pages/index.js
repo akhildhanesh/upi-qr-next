@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <br />
           {img != '' ? <div>
-            <button type="button" class="btn btn-outline-warning" onClick={copyLink}>{btn}</button>
+            <button type="button" className="btn btn-outline-warning" onClick={copyLink}>{btn}</button>
           </div> : ''}
         </div>
       </div>
