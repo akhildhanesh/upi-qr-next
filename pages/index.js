@@ -115,6 +115,8 @@ export default function Home() {
             <br />
             <br />
             <button type="button" className="btn btn-outline-warning" onClick={shortLink}>Create Short Link</button>
+            <br />
+            <br />
           </div> : ''}
         </div>
       </div>
