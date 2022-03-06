@@ -61,6 +61,15 @@ export default function Home() {
       .catch(e => setBtn('😒❌'))
   }
 
+  const shortLink = () => {
+    navigator.clipboard.writeText(link)
+      .then(() => {
+        setBtn('Copied✔')
+        location.href = 'https://cutt.ly/'
+      })
+      .catch(e => setBtn('😒❌'))
+  }
+
   return (
     <div className='container pt-3 text-white'>
       <meta name="theme-color" content="#615a9b" />
@@ -103,6 +112,9 @@ export default function Home() {
           <br />
           {img != '' ? <div>
             <button type="button" className="btn btn-outline-warning" onClick={copyLink}>{btn}</button>
+            <br />
+            <br />
+            <button type="button" className="btn btn-outline-warning" onClick={shortLink}>Create Short Link</button>
           </div> : ''}
         </div>
       </div>
