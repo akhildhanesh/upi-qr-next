@@ -8,18 +8,28 @@ export default function Home() {
   const [img, setImg] = useState([])
   const [error, setError] = useState([])
   const [spinner, setSpinner] = useState(false)
+  const [btn, setBtn] = useState('Copy Link')
+  const [link, setLink] = useState([])
 
   const submit = async event => {
     event.preventDefault()
     setError('')
     setImg('')
     setSpinner(true)
+    setBtn('Copy Link')
+
+    let vpa = event.target.vpa.value
+    let name = event.target.name.value
+    let amount = event.target.amount.value
+    let remarks = event.target.remarks.value
+
+    setLink(`upi://pay?pa=${vpa}&pn=${name}&am=${amount}.00&cu=INR&tn=${remarks}`)
 
     axios.post('https://api.ntools.tech', {
-      vpa: event.target.vpa.value,
-      name: event.target.name.value,
-      amount: event.target.amount.value,
-      remarks: event.target.remarks.value
+      vpa,
+      name,
+      amount,
+      remarks
     }, { responseType: 'blob' })
       .then(async ({ data }) => {
         setSpinner(false)
@@ -44,6 +54,13 @@ export default function Home() {
     setImg('')
     setError('')
   }
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(link)
+      .then(() => setBtn('Copied✔'))
+      .catch(e => setBtn('😒❌'))
+  }
+
   return (
     <div className='container pt-3 text-white'>
       <meta name="theme-color" content="#615a9b" />
@@ -79,10 +96,14 @@ export default function Home() {
           {/* <img src={img}></img> */}
           {spinner ? <div className="spinner-grow text-white" role="status"></div> : ''}
           {/* {img != '' ? <div><h3 className="text-danger">Scan To Pay</h3><Image src={ img } alt='sdfs' width='200' height='200' /><br /><Image src='/upi-logo.png' alt='sdfs' width='80' height='40' /></div> : ''} */}
-          {img != '' ? <div><h3 className="text-white" style={{ fontFamily: 'Cursive' }}>Scan To Pay</h3><a href={ img } ><img src={img} className="img-corner" alt='sdfs' width='200' height='200' /></a></div> : ''}
+          {img != '' ? <div><h3 className="text-white" style={{ fontFamily: 'Cursive' }}>Scan To Pay</h3><a href={img} ><img src={img} className="img-corner" alt='sdfs' width='200' height='200' /></a></div> : ''}
           <div>
             {error != '' ? <h1 className="text-danger">{error}</h1> : ''}
           </div>
+          <br />
+          {img != '' ? <div>
+            <button type="button" class="btn btn-outline-warning" onClick={copyLink}>{btn}</button>
+          </div> : ''}
         </div>
       </div>
     </div>
